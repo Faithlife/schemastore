@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://faithlife.github.io/schemastore/src/schemas/json/azure-containerapp.json",
+  "description": "Container App definition (for use with 'az containerapp update --yaml').\nSee https://learn.microsoft.com/en-us/azure/container-apps/azure-resource-manager-api-spec?tabs=arm-template#container-app.",
+  "properties": {
+    "properties": {
+      "type": "object",
+      "properties": {
+        "template": {
+          "$ref": "https://json.schemastore.org/azure-containerapp-template.json",
+          "description": "The template for the container app. See https://learn.microsoft.com/en-us/azure/container-apps/azure-resource-manager-api-spec?tabs=arm-template#propertiestemplate."
+        },
+        "configuration": {
+          "type": "object",
+          "properties": {
+              "secrets": {
+                  "type": "array",
+                  "items": {
+                      "type": "object",
+                      "properties": {
+                          "name": {
+                              "type": "string",
+                              "pattern": "^[a-z0-9-]{1,63}$",
+                              "description": "The name of the secret in the container app, which will be referenced by secretRef. Must be lowercase."
+                          },
+                          "keyVaultUrl": {
+                              "type": "string",
+                              "format": "uri",
+                              "description": "The Key Vault URL containing the secret"
+                          },
+                          "identity": {
+                              "type": "string",
+                              "pattern": "^system$",
+                              "description": "The identity to use to access the secret. Currently only 'system' is supported."
+                          }
+                      },
+                      "required": ["name", "keyVaultUrl", "identity"],
+                      "additionalProperties": false
+                  },
+                  "description": "A list of secrets from Key Vault."
+              },
+              "additionalProperties": false
+          },
+          "required": ["secrets"],
+          "additionalProperties": false,
+          "description": "Configuration for the container app. See https://learn.microsoft.com/en-us/azure/container-apps/azure-resource-manager-api-spec?tabs=arm-template#propertiesconfiguration."
+        }
+      },
+      "required": [
+        "template"
+      ],
+      "description": "Root of the Container App definition.",
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "properties"
+  ]
+}
