@@ -6,6 +6,10 @@
     "properties": {
       "type": "object",
       "properties": {
+        "environmentId": {
+          "type": "string",
+          "description": "The environment ID of the container app. Must be unique within the resource group."
+        },
         "template": {
           "$ref": "https://json.schemastore.org/azure-containerapp-template.json",
           "description": "The template for the container app. See https://learn.microsoft.com/en-us/azure/container-apps/azure-resource-manager-api-spec?tabs=arm-template#propertiestemplate."
