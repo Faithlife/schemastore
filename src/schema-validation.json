@@ -89,7 +89,6 @@
     "github-funding.json",
     "github-workflow-template-properties.json",
     "github-workflow.json",
-    "golangci-lint.json",
     "grunt-clean-task.json",
     "grunt-copy-task.json",
     "grunt-cssmin-task.json",
@@ -118,6 +117,8 @@
     "lgtm.json",
     "libman.json",
     "lintstagedrc.schema.json",
+    "metricshub.json",
+    "metricshub-connector.json",
     "minecraft-advancement.json",
     "minecraft-biome.json",
     "minecraft-dimension.json",
@@ -144,6 +145,7 @@
     "paper-plugin.json",
     "pattern.json",
     "partial-eslint-plugins.json",
+    "phrase.json",
     "phraseapp.json",
     "plagiarize-0.0.json",
     "plagiarize-me-0.0.json",
@@ -195,12 +197,14 @@
     "utam-page-object.json",
     "utam-page-object-1.5.0.json",
     "utam-page-object-2.0.3.json",
+    "utam-page-object-2.2.0.json",
     "vega-lite.json",
     "vs-nesting.json",
     "vsext.json",
     "vsix-manifestinjection.json",
     "vsix-publish.json",
     "vss-extension.json",
+    "vtesttree-schema.json",
     "web-types.json",
     "webextension.json",
     "webjob-publish-settings.json",
@@ -222,6 +226,7 @@
     "lsdlschema-3.3.json",
     "lsdlschema-3.4.json",
     "lsdlschema-3.5.json",
+    "lsdlschema-4.0.json",
     "lsdlschema.json",
     "nodemon.json",
     "partial-pyright.json",
@@ -248,11 +253,11 @@
     "schema-org-contact-point.json",
     "schema-org-place.json",
     "servicehub.config.schema.json",
-    "sourcemap-v3.json",
     "starlake.json",
     "swagger-2.0.json",
     "vega.json",
-    "metaschema-draft-07-unofficial-strict.json"
+    "metaschema-draft-07-unofficial-strict.json",
+    "glazewm.json"
   ],
   "fileMatchConflict": [
     // Name conflicts must be avoided. Do not add additional items here
@@ -306,6 +311,7 @@
     "lsdlschema-3.3.json",
     "lsdlschema-3.4.json",
     "lsdlschema-3.5.json",
+    "lsdlschema-4.0.json",
     "sarif-2.0.0-csd.2.beta.2018-10-10.json",
     "sarif-2.0.0-csd.2.beta.2019-01-09.json",
     "sarif-2.0.0-csd.2.beta.2019-01-24.json",
@@ -328,6 +334,7 @@
     // Add JSON schema to skiptest[] to skip the whole validation process
     // Below this line are the 'empty' schemas that should not be validated and also redirect to an external schema via a single $ref
     "block.json",
+    "golangci-lint.json",
     "haxelib.json",
     "ksp-avc.json",
     "ksp-ckan.json",
@@ -463,7 +470,7 @@
     },
     "cloudbuild.json": {
       "unknownFormat": ["google-duration"],
-      "unknownKeywords": ["enumDescriptions"]
+      "unknownKeywords": ["enumDescriptions", "markdownDescription"]
     },
     "cloudify.json": {
       "unknownKeywords": [
@@ -642,7 +649,7 @@
       "externalSchema": ["jsbeautifyrc.json"]
     },
     "jsconfig.json": {
-      "unknownKeywords": ["markdownDescription"]
+      "unknownKeywords": ["markdownDescription", "markdownEnumDescriptions"]
     },
     "launchsettings.json": {
       "unknownKeywords": ["allowTrailingCommas"]
@@ -680,6 +687,9 @@
     "lsdlschema-3.5.json": {
       "unknownFormat": ["language", "identifier"]
     },
+    "lsdlschema-4.0.json": {
+      "unknownFormat": ["language", "identifier"]
+    },
     "lsdlschema.json": {
       "externalSchema": [
         "lsdlschema-0.7.json",
@@ -691,7 +701,8 @@
         "lsdlschema-3.2.json",
         "lsdlschema-3.3.json",
         "lsdlschema-3.4.json",
-        "lsdlschema-3.5.json"
+        "lsdlschema-3.5.json",
+        "lsdlschema-4.0.json"
       ],
       "unknownFormat": ["language", "identifier-properties", "identifier"]
     },
